@@ -1,8 +1,37 @@
-<nav>
-    <h1 class=" uppercase text-4xl text-primary font-bold"> 
-        <span class="text-secondary">
-            Tu
-        </span> 
-        Gimnasio
-    </h1>
-</nav>
+---
+import {ArrowRightCircle} from 'lucide-astro'
+---
+<section class="flex items-center justify-between max-w-6xl m-auto px-4 py-4">
+    <div class="flex items-center justify-between gap-2">
+        <ArrowRightCircle color="#F4AF00" size={44}     />
+        <h1 class=" uppercase text-4xl text-primary font-bold"> 
+            <span class="text-secondary">Tu</span> 
+            Gimnasio
+        </h1>
+    </div>
+    <div class="flex gap-8 justify-between items-center">
+        <nav>
+            <ul class="flex justify-center items-center gap-8 text-secondary text-base font-medium  ">
+                <li>
+                    <a href="#" class="">Clases</a>
+                </li>
+                <li>
+                    <a href="#">Precios</a>
+                </li>
+                <li>
+                    <a href="#">Trainers</a>
+                </li>
+                <li>
+                    <a href="#">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="uppercase text-secondary font-medium px-6 py-3 rounded-2xl bg-primary hover:bg-accent transition">
+            Prueba Gratis
+        </button>
+    </div>
+    
+</section>
