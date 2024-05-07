@@ -1,16 +1,18 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import About from '@/sections/About.astro';
 import Hero from '@/sections/Hero.astro';
 import Navbar from '@/sections/Navbar.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="w-full h-dvh bg-[url('./smoke_to_header.jpg')] bg-cover">
+	<div class="w-full h-full bg-cover bg-[url('/smoke_to_header.jpg')]">
 		<Navbar />
 		<Hero />
 	</div>
-	
 	<main>
+		<About />
 
 	</main>
 </Layout>
+

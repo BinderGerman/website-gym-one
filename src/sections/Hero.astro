@@ -1,10 +1,24 @@
 ---
-import Navbar from "./Navbar.astro"
+import { Image } from 'astro:assets';
+
+import gymBroOne from '@/images/gym_bro_one.png'
+import { lazy } from 'astro/zod';
 ---
 
-<section class="relative max-full m-auto h-full uppercase text-7xl font-bold flex justify-center items-center">
-    <img class="absolute opacity-40" src="gym_bro_one.png" alt="Gym bro">
-    <div class=" text-center mb-16 z-0">
+
+<section class="m-auto uppercase text-7xl h-[600px] font-bold flex justify-center items-center">
+    <div class="absolute z-10 opacity-80">
+        <Image 
+            src={gymBroOne} 
+            eagerly-loaded 
+            height={600}
+            loading={'eager'}
+            alt=""
+            class="animate-fade-left animate-once animate-duration-1000 animate-delay-1000"
+        />
+    </div>
+    
+    <div class=" text-center mb-16 animate-fade-right animate-once animate-duration-1000 animate-delay-500">
         <h2 class="text-primary mb-4">Es tiempo de cambiar</h2>
         <h2 class="text-secondary">Empeza tu transformación</h2>
     </div>
