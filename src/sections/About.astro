@@ -1,23 +1,18 @@
 ---
+import SectionTitle from '@/components/SectionTitle.astro'
 import { getAbout } from "@/utils/functions/getData";
 
 const about = getAbout() 
 ---
 <section class="w-full flex justify-center items-center gap-8">
     <div class="w-[40%] py-20">
-        <div class="border-l-2 border-secondary pl-4 mb-8">
-            <h4 class=" text-base text-secondary font-normal">Sobre Nosotros</h4>
-            <h6 class="text-2xl text-primary font-medium">Nuestra Historia</h6>
-        </div>
+        <SectionTitle subtitle="Quienes Somos" title="Nuestra Historia" />
         <div class="h-[250px]">
             <iframe class=" rounded-lg" width="400" height="250" src="https://www.youtube.com/embed/PCZ2JHaPvZ4?si=raCOv2dDNuizzClL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
     <div class="w-[40%] py-20">
-        <div class="border-l-2 border-secondary pl-4 mb-8">
-            <h4 class=" text-base text-secondary font-normal">{about.subtitle}</h4>
-            <h6 class="text-2xl text-primary font-medium">{about.title}</h6>
-        </div>
+        <SectionTitle subtitle={about.subtitle} title={about.title} />
         <div class="h-[250px]">
             <p class="text-secondary text-lg">{about.description}</p>
         </div>

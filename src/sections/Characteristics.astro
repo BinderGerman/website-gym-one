@@ -1,0 +1,58 @@
+---
+import SectionTitle from "@/components/SectionTitle.astro";
+import {Dumbbell, HeartPulse, Timer, Swords } from 'lucide-astro'
+import { getCharacteristics } from "@/utils/functions/getData";
+import { Image } from "astro:assets";
+import gymSisterOne from '@/images/gym-sister_one.png'
+
+const characteristics = getCharacteristics()
+---
+
+<section class="w-full flex bg-cover bg-[url('/smoke_to_main.jpg')]">
+  <div class="flex-col w-[50%] p-16">
+    <SectionTitle subtitle="Características" title="Por qué elegirnos" />
+    <div class="grid grid-cols-2 gap-4 pt-4">
+      {characteristics.map(characteristic => {
+        let Icon;
+        switch (characteristic.title) {
+          case "Pro equipment":
+            Icon = Dumbbell;
+            break;
+          case "Cardio First":
+            Icon = HeartPulse;
+            break;
+          case "Ninja Coach":
+            Icon = Swords;
+            break;
+          case "Flexible Time":
+            Icon = Timer;
+            break;
+          default:
+            Icon = Dumbbell; // Puedes establecer un icono por defecto aquí
+        }
+        return (
+          <div class="flex text-secondary text-lg">
+            <Icon color="#F4EBE0" size={44} />
+            <div class="pl-6 mb-6">
+              <h5 class="uppercase font-medium mb-2">{characteristic.title}</h5>
+              <p class="">{characteristic.description}</p>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+  
+  <div class="relative w-[50%]">
+    <div class="absolute z-10 opacity-80 bottom-0 right-[25%] ">
+      <Image 
+            src={gymSisterOne} 
+            eagerly-loaded 
+            height={600}
+            loading={'eager'}
+            alt=""
+            class="animate-fade-left animate-once animate-duration-1000 animate-delay-1000"
+        />
+    </div>
+  </div>
+</section>
